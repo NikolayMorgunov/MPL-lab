@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 file_numb = input('File number = ')
-with open(f'data/00{file_numb}.dat', 'r') as f:
+with open(f'data1/00{file_numb}.dat', 'r') as f:
     s = f.read().split('\n')
     n = int(s[0])
     x, y = [], []
