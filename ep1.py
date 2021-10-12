@@ -13,5 +13,3 @@ with open(f'data/00{file_numb}.dat', 'r') as f:
     plt.axis('scaled')
     plt.title('Number of points: ' + str(n))
     plt.show()
-    plt.savefig('plot.png')
-
