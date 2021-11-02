@@ -1,5 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
+from collections import defaultdict
 
 with open('data3.csv', 'r') as f:
     reader = list(csv.reader(f, delimiter=';', quotechar='\n'))
@@ -73,18 +74,11 @@ with open('data3.csv', 'r') as f:
 
     # статистика
 
-    preps = dict()
-    groups = dict()
+    preps = defaultdict(list)
+    groups = defaultdict(list)
     for i in reader:
-        if i[0] in preps.keys():
-            preps[i[0]].append(int(i[2]))
-        else:
-            preps[i[0]] = [int(i[2])]
-
-        if i[1] in groups.keys():
-            groups[i[1]].append(int(i[2]))
-        else:
-            groups[i[1]] = [int(i[2])]
+        preps[i[0]].append(int(i[2]))
+        groups[i[1]].append(int(i[2]))
 
     preps_avr = dict()
     for i in preps.items():
